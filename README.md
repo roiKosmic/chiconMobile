@@ -14,5 +14,5 @@ To
 var serviceURL = "http://www.chicon.fr/chicon/webServices/";
 var imgURL = "http://www.chicon.fr/chicon/webSite/";
 
- ##Warnings
- I have only tested this application on Android devices.
+##Warnings
+I have only tested this application on Android devices.
