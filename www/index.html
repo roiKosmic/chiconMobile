@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+    </head>
+	<script>
+	$(document).on( "mobileinit", function() {
+    // Make your jQuery Mobile framework configuration changes here!
+	$.support.cors=true;
+    $.mobile.allowCrossDomainPages = true;
+	
+	
+});
+
+	</script>
+    <body>
+        <div data-role="page" id="login">
+            <div data-theme="b" data-role="header" data-position="fixed">
+                <h3>
+                    Chicon Mobile
+                </h3>
+
+            </div>
+			<div role="main" class="ui-content">
+            <form id="loginForm" >
+          
+                        <label for="log">
+                            Login
+                        </label>
+                        <input name="log" id="log" placeholder="" value="" type="text" />
+                        <label for="password">
+                            Password
+                        </label>
+                        <input  name="password" id="password" placeholder="" value="" type="password" />
+						  <label>
+								<input type="checkbox" id="rememberMe" name="checkbox-0 ">Remember me
+						</label>
+			
+                <input id="submit" type="submit" data-theme="b" value="Connect!" data-mini="true"/>
+				
+            </form>
+			
+			<div data-role="popup" id="popupFailed">
+						<p>Bad login credentials!</p>
+			</div>
+			</div>
+            <div data-theme="b" data-role="footer" data-position="fixed">
+                <h3>
+                    Light is life !
+                </h3>
+            </div>
+   
+        </div>
+		<div data-role="page" id="hdwListPage">
+            <div data-role="content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page1" data-theme="" data-icon="bullets" class="ui-btn-active">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page1" data-theme="" data-icon="star">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page1" data-theme="" data-icon="gear">
+                            </a>
+                        </li>
+                    </ul>
+				</div>
+				<ul id="hdwList" data-role="listview" data-inset="true" data-divider-theme="a" >
+    						<li data-role="list-divider">Your hardwares</li>
+    						<li><a href="#">HDW1</a></li>
+    						<li><a href="#">HDW2</a></li>
+    						<li><a href="#">HDW3</a></li>
+    						<li><a href="#">HDW4</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="page" id="hdwDetailedPage">
+            <div data-role="content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#" data-rel="back" data-theme="" data-icon="arrow-l" data-transition='slide'>
+                            </a>
+                        </li>
+                    </ul>
+				</div>
+				<ul id="ledList" data-role="listview" data-inset="true" data-divider-theme="a">
+    						<li data-role="list-divider">Hardwares LED</li>
+    						<li><a href="#">LED 1 </a></li>
+    						<li><a href="#">LED 2</a></li>
+    						<li><a href="#">LED 3</a></li>
+    						<li><a href="#">LED 4</a></li>
+				</ul>
+				
+				
+			</div>
+		</div>
+		<div data-role="page" id="virtualLampPage">
+            <div data-role="ui-content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#" data-rel="back" data-theme="" data-icon="arrow-l">
+                            </a>
+                        </li>
+                    </ul>
+				</div>
+				<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg3352"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="dessin-update.svg"
+   preserveAspectRatio 
+   >
+  <defs
+     id="defs3354" >
+	<filter id="f1" x="0" y="0" width="100%" height="100%">
+		<feGaussianBlur in="sourceGraphic" stdDeviation="5" />
+    </filter>
+</defs>
+	
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path filter="url(#f1)" id="id_3"
+       style="fill:grey" 
+       d="m 399.67996,888.54703 -27.28686,-0.41996 -0.95414,-31.04133 c -0.91408,-29.73825 -0.0773,-75.66301 3.53314,-193.89847 1.90256,-62.30594 0.93635,-128.78886 -2.39797,-165 -4.50933,-48.97193 0.7708,-87.12231 16.5095,-119.28571 7.70161,-15.7389 15.81287,-26.39896 27.18531,-35.72774 11.77628,-9.66006 35.45927,-20.12547 38.49804,-17.01213 1.81362,1.85814 9.33053,47.99573 12.78204,78.45415 13.14173,115.97137 12.07885,289.2174 -2.76471,450.63999 -1.54962,16.85198 -2.81749,31.47698 -2.81749,32.5 0,1.44407 -3.91343,1.78747 -17.5,1.53558 -9.625,-0.17842 -29.77909,-0.5134 -44.78686,-0.74438 z"
+      
+       inkscape:connector-curvature="0" />
+    <path filter="url(#f1)" id="id_1"  
+       style="fill:grey;"
+       d="m 250.44389,871.41249 c -4.17892,-62.20899 -4.82165,-234.31127 -1.10037,-294.6429 5.85614,-94.94319 14.69405,-166.04721 28.05525,-225.71429 4.39077,-19.60784 6.27697,-26.42857 7.30854,-26.42857 2.53568,0 15.9498,13.27171 23.37839,23.13021 26.21572,34.79087 40.33675,87.08356 45.63332,168.98826 2.11679,32.73333 1.82289,108.80987 -0.74237,192.16725 -1.22107,39.67857 -2.02492,95.44682 -1.78633,123.92944 l 0.43381,51.7866 -50.14628,-9e-4 -50.14629,-9e-4 -0.88767,-13.2142 z"
+       
+       inkscape:connector-curvature="0" />
+    <path filter="url(#f1)" id="id_2" 
+       style="fill:grey"
+       d="m 357.36775,429.24959 c -3.77543,-20.35573 -11.75972,-48.2963 -18.0639,-63.21359 -8.81137,-20.84996 -18.78638,-35.91034 -33.26797,-50.22834 l -12.15062,-12.01334 3.98065,-13.70094 c 10.31966,-35.51903 26.48043,-72.5788 41.49879,-95.16472 4.63699,-6.97351 13.32359,-17.83733 19.30355,-24.14182 12.55093,-13.23207 12.28496,-13.21585 25.25839,-1.54014 24.54715,22.09174 46.81546,68.61309 59.22551,123.72965 l 2.12574,9.44105 -8.02687,2.49516 c -33.93034,10.54731 -57.36388,37.03556 -69.34701,78.38684 -3.44515,11.8885 -7.51699,36.17427 -8.30297,49.52162 -0.37152,6.30905 -0.41304,6.24267 -2.23329,-3.57143 z"
+      
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
+				
+			</div>
+			<div data-role="popup" id="popupVirtual" data-overlay-theme="a">
+					<ul id="virtualLedList" data-role="listview" data-inset="true"data-divider-theme="a"">
+						<li data-role="list-divider">LED Details</li>
+					</ul>
+					</div>
+				</ul>
+		</div>			
+		<div data-role="page" id="confirmPage" >
+					<div data-role="header" data-theme="a">
+					Confirm LED selection?
+					</div>
+					<div role="main" class="ui-content">
+						<P>Are you sure you want to select this LED?&nbsp;<div id="ledId"></div></p>
+						
+						<p>This action cannot be undone.</p>
+						<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Cancel</a>
+						<a href="#" id="selectBtn" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" >Select</a>
+					</div>
+					<div data-role="popup" id="confirmPopup" >
+						<p>Selection confirmed by Server!</p>
+					</div>
+		</div>
+		<script src="js/globalVariables.js"></script>
+        <script src="js/login.js"></script>
+		<script src="js/home.js"></script>
+		<script src="js/hdwDetails.js"></script>
+		<script src="js/virtualLamp.js"></script>
+		<script src="js/confirmPage.js"></script>
+    </body>
+</html>

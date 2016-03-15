@@ -1,0 +1,14 @@
+//var serviceURL = "http://www.chicon.fr/chicon/webServices/";
+//var imgURL = "http://www.chicon.fr/chicon/webSite/";
+var serviceURL = "http://127.0.0.1/chicon/webServices/";
+var imgURL = "http://127.0.0.1/chicon/webSite/";
+var result;
+var currentLed;
+var currentSerial;
+var magicn;
+var LTYPE_BINARY  =     1;
+var LTYPE_TRICOLOR =    2;
+var LTYPE_RGB   =   4;
+var LTYPE_BLINKING   =  8;
+var LTYPE_BRIGHTNESS  =  16;
+var srvTab = new Object();
