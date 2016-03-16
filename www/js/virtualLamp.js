@@ -24,6 +24,12 @@ $("#virtualLampPage").on("pageshow",function(){
 				
 								}
 									$('#virtualLedList').listview('refresh');
+									$(".virtualLedBtn").on("click",function(event){
+											console.log("a clicked");
+											currentLed = $(this).attr("ledId");
+									});
+
+									
 									$("#popupVirtual").popup("open");
 								
 							}
@@ -35,11 +41,6 @@ $("#virtualLampPage").on("pageshow",function(){
 					}
 				);
 			
-			$(".virtualLedBtn").on("click",function(event){
-				$target = $( event.target );
-				console.log("a clicked");
-				currentLed = $target.attr("ledId");
-			});
 
 			configVirtualLamp();
 		}

@@ -7,17 +7,13 @@ $("#hdwDetailedPage").on("pagebeforeshow",function(){
 			
 	}
 );
-
+/*
 $("#hdwDetailedPage").on("pageshow",function(){
-		console.log("binding click");
-		$(".ledBtn").on("click",function(event){
-				$target = $( event.target );
-				console.log("a clicked");
-				currentLed = $target.attr("ledId");
-			});
+		
 
 }
 );
+*/
 
 function getHardwareDetails(){
 	console.log("Getting Hardwares Details for:"+currentSerial);
@@ -44,6 +40,11 @@ function getHardwareDetails(){
 				}
 				
 				$('#ledList').listview('refresh');
+				console.log("binding click");
+				$(".ledBtn").on("click",function(event){
+					console.log("clicked: "+event.target.nodeName);
+					currentLed = $(this).attr("ledId");
+			});
 				
 			}
 	);
