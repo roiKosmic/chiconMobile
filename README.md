@@ -7,12 +7,13 @@
 
 ##Configuration
 Update the globalVariables.js file to point to the required chic'on server.
-If you are using the free application cloud hosted on Internet you have to update from
-* var serviceURL = "http://127.0.0.1/chicon/webServices/";
-* var imgURL = "http://127.0.0.1/chicon/webSite/";   
-   To
+If you are NOT using the free application cloud hosted on Internet you have to update from
 * var serviceURL = "http://www.chicon.fr/chicon/webServices/";
-* var imgURL = "http://www.chicon.fr/chicon/webSite/";
+* var imgURL = "http://www.chicon.fr/chicon/webSite/";   
+TO
+* var serviceURL = "http://[YOUR_SERVER_IP_OR_NAME]/chicon/webServices/";
+* var imgURL = "http://[YOUR_SERVER_IP_OR_NAME]/chicon/webSite/";   
+
 
 ##Warnings
 I have only tested this application on Android devices.
