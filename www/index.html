@@ -8,6 +8,8 @@
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 
     </head>
+	<script src="js/globalVariables.js"></script>
+	<script src="cordova.js"></script>
 	<script>
 	$(document).on( "mobileinit", function() {
     // Make your jQuery Mobile framework configuration changes here!
@@ -15,7 +17,26 @@
     $.mobile.allowCrossDomainPages = true;
 	
 	
-});
+	});
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	function onDeviceReady(){
+		document.addEventListener("backbutton", function(e){
+			if($.mobile.activePage.is('#login')){
+				e.preventDefault();
+				console.log("Exiting application from login page");
+				$.getJSON(serviceURL+"/loginWebService.php",{logout: "now"},
+						function(data){
+							navigator.app.exitApp();
+					
+						}
+				);
+			}else {
+				navigator.app.backHistory()
+			}
+		}, false);
+	}
 
 	</script>
     <body>
@@ -69,8 +90,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#page1" data-theme="" data-icon="gear">
-                            </a>
+                            <a href="#popupLogout" data-rel="popup" data-position-to="window" data-icon="delete"></a>
                         </li>
                     </ul>
 				</div>
@@ -81,6 +101,17 @@
     						<li><a href="#">HDW3</a></li>
     						<li><a href="#">HDW4</a></li>
 				</ul>
+				
+				<div data-role="popup" id="popupLogout" data-overlay-theme="a">
+					<div data-role="header" data-theme="a" >
+						<h1>Close application?</h1>
+					</div>
+					<div role="main" class="ui-corner-bottom ui-content">
+						<h3 class="ui-title">Are you sure you want to close this application?</h3>
+							<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">Cancel</a>
+							<a href="#" id="closeApp" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="b">Close</a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div data-role="page" id="hdwDetailedPage">
@@ -165,8 +196,7 @@
 					<ul id="virtualLedList" data-role="listview" data-inset="true"data-divider-theme="a"">
 						<li data-role="list-divider">LED Details</li>
 					</ul>
-					</div>
-				</ul>
+			</div>
 		</div>			
 		<div data-role="page" id="confirmPage" >
 					<div data-role="header" data-theme="a">
@@ -183,7 +213,7 @@
 						<p>Selection confirmed by Server!</p>
 					</div>
 		</div>
-		<script src="js/globalVariables.js"></script>
+		
         <script src="js/login.js"></script>
 		<script src="js/home.js"></script>
 		<script src="js/hdwDetails.js"></script>

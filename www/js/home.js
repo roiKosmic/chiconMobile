@@ -4,6 +4,18 @@ console.log("home script imported");
 
 $("#hdwListPage").on("pagebeforecreate",function(){
 			console.log("in Home Page");
+			$('#closeApp').bind("click",
+				function(event){
+					event.preventDefault();
+					console.log("closing App");
+					$.getJSON(serviceURL+"/loginWebService.php",{logout: "now"},
+						function(data){
+							
+							navigator.app.exitApp();
+					
+						}
+					);
+				});
 			getHardwares();
 		}
 );

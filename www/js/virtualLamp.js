@@ -47,7 +47,7 @@ $("#virtualLampPage").on("pageshow",function(){
 );
 
 function configVirtualLamp(){
-			
+			 
 			$.getJSON(serviceURL+"/hdwWS.php",{cfg:"",mn: magicn},
 			function(data){
 				//{"srvconfig":[{"id":67,"led":[{"id":2,"type":1}],"freq":1000},{"id":68,"led":[{"id":3,"type":8}],"freq":1000},{"id":69,"led":[{"id":1,"type":2}],"freq":1000}]}
@@ -79,20 +79,23 @@ function configVirtualLamp(){
 }
 
 function processServices(){
-	
+	$.mobile.loading("show");
 	var block = true;
 		for(var i in srvTab){
+		
 			$.getJSON(serviceURL+"/hdwWS.php",{srv:srvTab[i]["id"],mn: magicn},
 				function (data){
+					
 					//{"srvset":{"id":69,"led":[{"id":1,"value":[0]}]}}
 					if(data.srvset){
 						processLed(data.srvset.id,data.srvset.led);
 					}
-					
+					$.mobile.loading("hide");
 				}
 			);
 		
 		}
+		
 }
 
 function rgb2hex(r,g,b) {
@@ -151,3 +154,4 @@ function blinkVirtualLed(id){
 	}
 	
 }
+

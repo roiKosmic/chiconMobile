@@ -3,6 +3,7 @@ console.log("Hdw Details script imported");
 
 $("#hdwDetailedPage").on("pagebeforeshow",function(){
 			console.log("in Detail Page");
+			
 			getHardwareDetails();
 			
 	}
