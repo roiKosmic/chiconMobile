@@ -7,7 +7,22 @@
 
 ###Cordova
 * Create your project
-'' cordova create chiconMobile com.chicon.mobile ChiconMobile
+```
+cordova create chiconMobile com.chicon.mobile ChiconMobile  
+```
+* Build for your platform (Here android)
+```
+cd chiconMobile
+cordova platform add android 
+```
+* Update android manifest to allow Internet connection
+``` 
+cd chiconMobile\platforms\android\AndroidManifest.xml
+``` 
+``` xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 ###Configuration
 Update the globalVariables.js file to point to the required chic'on server.
 If you are NOT using the free application cloud hosted on Internet you have to update from
