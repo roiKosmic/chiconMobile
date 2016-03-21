@@ -22,6 +22,12 @@ cd chiconMobile\platforms\android\AndroidManifest.xml
 ``` xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
+* copy the www folder contents to chiconMobile\www
+* Build your project
+``` 
+cd chiconMobile
+cordova build android
+``` 
 
 ###Configuration
 Update the globalVariables.js file to point to the required chic'on server.
