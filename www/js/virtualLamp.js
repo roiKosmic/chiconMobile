@@ -1,7 +1,17 @@
 console.log("virtual Lamp script imported");
+var st=[];
+var st_;
+
+$("#virtualLampPage").on("pagehide",function(){
+	for(var i=0, len=st.length; i < len; i++){
+		clearInterval(st[i]);
+	}
+	});
 
 $("#virtualLampPage").on("pageshow",function(){
 			console.log("in virtualLamp Page :"+currentSerial);
+			st_=0;
+			st = [];
 			$("#virtualLampPage path").attr("style","fill:grey;");
 			$("#virtualLampPage path").bind("click",
 					function(event){
@@ -136,7 +146,12 @@ function processLed(srvId,led){
 				$("#id_"+led[i].id).attr("style","fill:"+color+";");
 			break;
 			case LTYPE_BLINKING:
-				setInterval("blinkVirtualLed('"+led[i].id+"')",led[i].value[0]);
+				if(led[i].value[0] !=0){
+					st[st_] = setInterval("blinkVirtualLed('"+led[i].id+"')",led[i].value[0]);
+					st_++;
+				}else{
+					$("#id_"+led[i].id).attr("style","fill:grey;");
+				}
 			break;
 		}
 	
