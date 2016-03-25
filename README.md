@@ -1,5 +1,9 @@
 # chiconMobile
-## Devolopper
+## Android End User
+The application is not yet available on Google play store. Check out our wiki to install the application on your android smartphone:
+https://github.com/roiKosmic/chiconMobile/wiki/How-to-install-and-use-chiconMobile-on-Android-device
+
+## Developper
 ###Pre-requisite
 * This application is written in HTML5/jquery/jquery mobile and need cordova to generate application for appropriate OS (Android/IOS...)
 * This application connect to chic'on application cloud. Thus a chic'on server and a chic'on account is needed.
